@@ -51,3 +51,5 @@ GET         /sitemap-documentation.xml                               controllers
 GET         /robots.txt                                              controllers.Application.robots
 
 GET         /*route                                                  controllers.Application.onHandlerNotFound(route)
+
+GET         /webjars/*file                                           controllers.WebJarAssets.at(file)

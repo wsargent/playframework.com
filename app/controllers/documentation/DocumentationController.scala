@@ -1,20 +1,21 @@
 package controllers.documentation
 
 import actors.DocumentationActor
-import actors.DocumentationActor.{ NotFound => DocsNotFound, NotModified => DocsNotModified, _ }
+import actors.DocumentationActor.{NotFound => DocsNotFound, NotModified => DocsNotModified, _}
 import akka.actor.ActorRef
 import akka.pattern.ask
 import akka.util.Timeout
-import javax.inject.{Named, Inject, Singleton}
+import javax.inject.{Inject, Named, Singleton}
+
 import models.PlayReleases
 import models.documentation.{AlternateTranslation, TranslationContext, Version}
 import org.joda.time.format.DateTimeFormat
 import play.api.http.HttpEntity
-import play.api.i18n.{MessagesApi, Lang}
+import play.api.i18n.{Lang, MessagesApi}
 import play.api.mvc._
+
 import scala.concurrent.Future
 import scala.concurrent.duration._
-
 import play.api.libs.MimeTypes
 import play.api.libs.concurrent.Execution.Implicits.defaultContext
 
